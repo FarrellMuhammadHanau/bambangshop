@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement delete function in Subscriber repository.`
     -   [x] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [x] Commit: `Create Notification service struct skeleton.`
+    -   [x] Commit: `Implement subscribe function in Notification service.`
+    -   [x] Commit: `Implement subscribe function in Notification controller.`
+    -   [x] Commit: `Implement unsubscribe function in Notification service.`
+    -   [x] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -87,5 +87,13 @@ This is the place for you to write reflections:
     Pada kasus ini, kita menggunakan pattern Singleton untuk memastikan hanya terdapat 1 instance database yang ada untuk tiap jenis model. Namun, masalah akan terjadi jika kita tidak menggunakan Thread Safe library seperti DashMap, dimana pada pattern Singleton, instance dari 1 objek tersebut dapat digunakan secara bersamaan oleh beberapa thread, yang dimana akan menyebabkan terjadinya race condition. Untuk itu, kita menggunakan Thread Safe library seperti DashMap.  
 
 #### Reflection Publisher-2
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model? <br>
+    Dalam model MVC, kita perlu memisahkan Service dan Repository dari Model untuk memenuhi salah satu prinsip dari SOLID Principle yaitu SRP atau Single Responsibility Principle yang dimana Repository berfungsi untuk menyimpan data dalam basis data kedalam basis data, sementara itu service berfungsi sebagai business logic.
+
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model? <br>
+    Jika kita hanya menggunakan model tanpa memisahnya menjadi Service dan Repository, maka kode akan menjadi kurang maintainable. Hal ini dikarenakan kelas model akan menjadi sangat panjang dan akan ada keterikatan kuat antara beberapa model. Hal ini membuat code dari tiap model menjadi lebih complex.
+
+3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects. <br>
+    Ya. Menurut saya Postman merupakan tool yang sangat berguna untuk melakukan http request terutama request dengan tipe post, put, atau delete. Hal ini dikarenakan kita dapat set metode http request sesuai dengan yang diinginkan dimana dengan browser, kita sulit untuk melakukan http request dengan tipe-tipe tersebut. Selain itu, Postman juga memudahkan kita untuk melihat http response yang dikirimkan oleh server.
 
 #### Reflection Publisher-3

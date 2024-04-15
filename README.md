@@ -97,3 +97,11 @@ This is the place for you to write reflections:
     Ya. Menurut saya Postman merupakan tool yang sangat berguna untuk melakukan http request terutama request dengan tipe post, put, atau delete. Hal ini dikarenakan kita dapat set metode http request sesuai dengan yang diinginkan dimana dengan browser, kita sulit untuk melakukan http request dengan tipe-tipe tersebut. Selain itu, Postman juga memudahkan kita untuk melihat http response yang dikirimkan oleh server.
 
 #### Reflection Publisher-3
+1. Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use? <br>
+    Dalam tutorial ini, kita menggunakan Push model, dimana ketika suatu product ditambahkan atau dihapus, maka product service akan memanggil menggunakan notification service untuk mengirimkan notifikasi ke tiap subscriber yang ada 
+
+2. What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull) <br>
+    Jika kita menggunakan Pull model, maka subscriber harus meminta notifikasi pada publisher. Kelebihan dari Push model adalah subscriber tidak perlu meminta request pada publisher untuk mendapatkan notifikasi product yang telah dibuat/dihapus. Kelebihan dari Pull method adalah publisher tidak perlu mengirim notifikasi ke tiap subscriber ketika ada product yang telah dibuat/dihapus sehingga akan lebih efisien.
+
+3. Explain what will happen to the program if we decide to not use multi-threading in the notification process. <br>
+    jika kita tidak menggunakan multi-threading pada proses notifikasi, maka server akan mengirimkan notifikasi satu per satu untuk tiap subscriber. Hal ini sangat tidak efisien dan dapat menghambat jalannya server.
